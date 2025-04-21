@@ -76,12 +76,12 @@ def dashboard():
 
     
     conn = connect(
-        s3_staging_dir='s3://s3user-bucket-dest-25/results',
+        s3_staging_dir=os.environ.get("S3_STAGING_DIR", "s3://your-s3-bucket/"),
         aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID"),
         aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY"),
         aws_session_token=os.environ.get("AWS_SESSION_TOKEN"),
-        region_name='us-east-1',
-        schema_name='rekognition_results_db'
+        region_name=os.environ.get("AWS_REGION", "us-east-1"),
+        schema_name=os.environ.get("ATHENA_SCHEMA_NAME"),
     )
 
     query = """
