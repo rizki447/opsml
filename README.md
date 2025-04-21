@@ -15,6 +15,7 @@
 `FLASK_SECRET_KEY=lks`<br/>
 `API_GATEWAY_URL=your url api gateway`<br/>
 `SNS_TOPIC_ARN=your sns topic`<br/>
+`ATHENA_SCHEMA_NAME=your db athena`<br/>
 
 ## Install Dependencies
 `pip install -r requirements.txt`
