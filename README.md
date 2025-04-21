@@ -6,7 +6,7 @@
 
 ## Environment Variable
 
-AWS_ACCESS_KEY_ID=your access key id<br/>
+`AWS_ACCESS_KEY_ID=your access key id`</br/>
 AWS_SECRET_ACCESS_KEY=your secret access key<br/>
 AWS_SESSION_TOKEN=your session token<br/>
 AWS_REGION=your default region<br/>
