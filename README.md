@@ -1,4 +1,4 @@
-# This project with AWS EKS
+# This project using Python and deployment with AWS EKS
 
 
 ## Application Port
