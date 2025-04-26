@@ -44,10 +44,10 @@ def lambda_handler(event, context):
             Body=json.dumps(result)
         )
 
-        # Kirim notifikasi ke SNS
+        # Kirim notifikasi ke SNS dengan nama bucket
         sns.publish(
             TopicArn=SNS_TOPIC_ARN,
-            Message=f"Hasil analisa gambar {key}: {json.dumps(labels)}",
+            Message=f"Hasil analisa gambar {key} dari bucket {bucket}: {json.dumps(labels)}",
             Subject="Hasil Rekognition"
         )
 
