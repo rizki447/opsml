@@ -19,3 +19,19 @@
 
 ## Install Dependencies
 `pip install -r requirements.txt`
+
+## 📊 Query Athena
+
+### ✅ Query: CREATE EXTERNAL TABLE
+
+```sql
+CREATE EXTERNAL TABLE IF NOT EXISTS rekognition_results_db.rekognition_results_table (
+  image_key string,
+  labels array<struct<Name:string, Confidence:double>>
+)
+ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
+WITH SERDEPROPERTIES (
+  'serialization.format' = '1'
+)
+LOCATION 's3://your-destination-bucket/results'
+TBLPROPERTIES ('has_encrypted_data'='false');
