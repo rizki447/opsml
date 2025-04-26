@@ -9,5 +9,5 @@ templates/input_token.html
 templates/index_.html
 
 .dockerfile
-deployment/deploy.yaml
-deployment/service.yaml
+# deployment/deploy.yaml
+# deployment/serv

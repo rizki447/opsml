@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: opsml-deployment
+  labels:
+    app: techno-opsml
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: techno-opsml
+  template:
+    metadata:
+      labels:
+        app: techno-opsml
+    spec:
+      containers:
+      - name: opsml
+        image: 334671914114.dkr.ecr.us-east-1.amazonaws.com/opsml:latest
+        ports:
+        - containerPort: 2000  # Ganti jika aplikasimu pakai port lain
+        env:
+        - name: AWS_ACCESS_KEY_ID
+          value: "ASIAU33AAESBB36XHAVX"
+        - name: AWS_SECRET_ACCESS_KEY
+          value: "s/dcWAp7I4f1rkkmdfTqVxuucOzEMeeaPB4Lx5+G"
+        - name: AWS_SESSION_TOKEN
+          value: "IQoJb3JpZ2luX2VjEKL//////////wEaCXVzLXdlc3QtMiJIMEYCIQD9isoKsePqdLNqZNuW+Xh+A8d9u4MoALEeK7AqXn06rQIhAJ+xiZ5tNeeFSXBfnABmGXSryBnRNErT6SxzlvYfVnGBKqYCCDsQARoMMzM0NjcxOTE0MTE0Igx7NHc9vs17WApwztIqgwKRECoy1q43sfnLK0qcHePWxgrA8uQmreWx2HVe1GKl8Gx7dG3uI2Pp7GvA+lyKcJwG4dWPxZ1XFj1dgRcQRVZ1/a90kARObqUJ3YY2zxV+gpS6TTVDzurcZvZfqELMouvXu38o1hv5AeHBFPIwqoE8Aj/CdQIstjsREDIdQ+PE8msRdBGsv3vNapCAVUNlZw1ObAaH428gzH7u0+5Yws7/0g93syH783k9w2f7LtyDoKDErYbE1L6qekWrMVm9mkLP+GWpwIISXojurvsNPVns++OnIVZP4VsUMk7dccJ1WDLe5bXfvj+Cbj4mReQoXZH9VQjIA0KYgDpocbRgo1wKVhbyMOeAscAGOpwBTjJYhLf91R9p+qaRZM/kO4t3FmyRSOCsMO8M6f8J6SUcS90nxdKdNaQaEEBVR+6CkAIV1IoPmFZZdqCE0gvO0R7ErOjkLBzhkWzKhkI+7FrWRWRMxIcniIW1z+QDb6J5wXbasZXEnVgG8PowbuiBjLH1CEztDKk0uYBvu1gKUihPrrBcLKNhSSTTWh/WoqfPugEvqa6TbWdJ+aL+"
+        - name: AWS_REGION
+          value: "us-east-1"
+        - name: ATHENA_DB
+          value: "rekognition_results_db"
+        - name: S3_STAGING_DIR
+          value: "s3://technooutput-handi-25/results"
+        - name: FLASK_SECRET_KEY
+          value: "lks"
+        - name: API_GATEWAY_URL
+          value: "https://cpxbyujoih.execute-api.us-east-1.amazonaws.com/prod"
+        - name: SNS_TOPIC_ARN
+          value: "arn:aws:sns:us-east-1:334671914114:technosns-handi"
+        - name: ATHENA_SCHEMA_NAME
+          value: "rekognition_results_db"
