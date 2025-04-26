@@ -4,7 +4,7 @@
 ## Application Port
 `Port application running on 2000`
 
-## Environment Variable
+## Environment Variable for Apps
 
 - AWS_ACCESS_KEY_ID=your access key id
 - AWS_SECRET_ACCESS_KEY=your secret access key
@@ -16,6 +16,16 @@
 - API_GATEWAY_URL=your url api gateway
 - SNS_TOPIC_ARN=your sns topic
 - ATHENA_SCHEMA_NAME=your db athena
+
+
+## Environment for Github Action
+- AWS_ACCESS_KEY_ID=your access key id
+- AWS_SECRET_ACCESS_KEY=your secret access key
+- AWS_SESSION_TOKEN=your session token
+- AWS_REGION=your default region
+- ECR_REGISTRY= your ecr registry id
+- ECR_REPOSITORY = your ecr name
+- CLUSTER_NAME = your name cluster EKS
 
 ## Install Dependencies
 `pip install -r requirements.txt`
