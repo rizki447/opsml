@@ -2,6 +2,7 @@ import json
 import secrets
 import time
 import boto3
+import os
 from botocore.exceptions import ClientError
 
 def lambda_handler(event, context):
@@ -11,7 +12,7 @@ def lambda_handler(event, context):
         expiration = int(time.time()) + 300  # 5 menit
         
         dynamodb.put_item(
-            TableName='Tokens',
+            TableName=os.environ['TOKEN_TABLE'],
             Item={
                 'token': {'S': token},
                 'expiration': {'N': str(expiration)}
