@@ -15,7 +15,7 @@ YourCity :
 - AWS_SESSION_TOKEN=your session token
 - AWS_REGION=your default region
 - ATHENA_DB=your db athena
-- S3_STAGING_DIR=your s3 bucket
+- S3_STAGING_DIR=your destination s3 bucket
 - FLASK_SECRET_KEY=lks
 - API_GATEWAY_URL=your url api gateway
 - SNS_TOPIC_ARN=your sns topic
