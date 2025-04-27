@@ -13,3 +13,14 @@ templates/index_.html
 .dockerfile
 deployment/deploy.yaml
 deployment/serv
+.env
+venv/
+__pycache__/
+*.pyc
+
+app.py_
+cobasns.py
+templates/input_token.html
+templates/index_.html
+
+.dockerfile

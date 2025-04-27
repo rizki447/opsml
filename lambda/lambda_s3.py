@@ -44,14 +44,25 @@ def lambda_handler(event, context):
             Body=json.dumps(result)
         )
 
+<<<<<<< HEAD
         # Kirim notifikasi ke SNS dengan nama bucket
         sns.publish(
             TopicArn=SNS_TOPIC_ARN,
             Message=f"Hasil analisa gambar {key} dari bucket {bucket}: {json.dumps(labels)}",
+=======
+        # Kirim notifikasi ke SNS
+        sns.publish(
+            TopicArn=SNS_TOPIC_ARN,
+            Message=f"Hasil analisa gambar {key}: {json.dumps(labels)}",
+>>>>>>> a5129244e1fb687b958df930a3d59d337f356f93
             Subject="Hasil Rekognition"
         )
 
     return {
         'statusCode': 200,
         'body': json.dumps('Gambar diproses!')
+<<<<<<< HEAD
     }
+=======
+    }
+>>>>>>> a5129244e1fb687b958df930a3d59d337f356f93
