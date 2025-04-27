@@ -12,6 +12,6 @@ templates/index_.html
 
 .dockerfile
 deployment/deploy.yaml
-deployment/serv
+deployment/service.yaml
 .env
 venv/
