@@ -1,5 +1,9 @@
 # This project using Python and deployment with AWS EKS
 
+## Form Data
+Input your data in here:<br/>
+Name : <br/>
+YourCity : 
 
 ## Application Port
 `Port application running on 2000`
